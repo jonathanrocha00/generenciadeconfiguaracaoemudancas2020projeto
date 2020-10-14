@@ -9,9 +9,14 @@ class SaldoCommand {
             return account.id == this.accountId;
         })
 
-        console.log("Consultando saldo da conta " + this.accountId + ": " + account.balance);
-
-        return account.balance;
+        if (account) {
+            console.log("Consultando saldo da conta " + this.accountId + ": " + account.balance);
+            return account.balance;
+        } else {
+            console.log("Erro na consulta de saldo da conta " + this.accountId + "...");
+            return false;
+        }
+        
     }
 }
 
