@@ -10,11 +10,15 @@ class CreditoCommand {
             return account.id == this.accountId;
         })
 
-        console.log("Creditando " + this.value + " na conta " + this.accountId + "...");
-
-        account.balance = parseInt(account.balance) + parseInt(this.value);
-
-        return true;
+        if (parseInt(this.value) > 0) {
+            console.log("Creditando " + this.value + " na conta " + this.accountId + "...");
+            account.balance = parseInt(account.balance) + parseInt(this.value);
+            return true;
+        } else {
+            console.log("Erro creditando na conta " + this.accountId + ". Valor não positivo");
+            return false;
+        }
+        
     }
 }
 
