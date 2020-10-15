@@ -9,8 +9,8 @@ module.exports = function(app) {
     .put(bank.credito);
 
   app.route('/debito/:accountId/:value')
-    .put(bank.debito);
+    .get(bank.debito);
 
-  app.route('/transferencia/:accountId1/:accountId2/:value')
+  app.route('/transferencia/:accountIdFrom/:accountIdTo/:value')
     .put(bank.transferencia);
 };
