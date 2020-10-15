@@ -39,3 +39,22 @@ test('test credito command fail negative value', () =>{
 
     expect(new creditoCommand(accounts, "2", -10).execute()).toBe(false);
 });
+
+test('test credito command fail account doesnt exist', () =>{
+    let accounts = [
+        {
+            id: "1",
+            balance: "10"
+        },
+        {
+            id: "2",
+            balance: "100"
+        },
+        {
+            id: "3",
+            balance: "1000"
+        },
+    ];
+
+    expect(new creditoCommand(accounts, "4", 10).execute()).toBe(false);
+});
