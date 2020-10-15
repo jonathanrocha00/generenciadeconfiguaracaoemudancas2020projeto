@@ -1,0 +1,28 @@
+{
+  "name": "projetogerenciadeconfiguracaoemudanca",
+  "version": "1.0.0",
+  "description": "Projeto da disciplina de Gerencia de Configuracao e Mudanca 2020",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto.git"
+  },
+  "author": "Jonathan Rocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto/issues"
+  },
+  "homepage": "https://github.com/jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto#readme",
+  "devDependencies": {
+    "jest": "^26.5.3",
+    "nodemon": "^2.0.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  }
+}
