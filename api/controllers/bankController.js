@@ -11,12 +11,12 @@ exports.saldo = function(req, res) {
 };
 
 exports.credito = function(req, res) {
-  const result = new creditoCommand(accounts, req.params.accountId, req.params.value).execute();
+  const result = new creditoCommand(accounts, req.query.accountId, req.query.value).execute();
   res.json(result);
 };
 
 exports.debito = function(req, res) {
-  const result = new debitoCommand(accounts, req.params.accountId, req.params.value).execute();
+  const result = new debitoCommand(accounts, req.query.accountId, req.query.value).execute();
   res.json(result);
 };
 
