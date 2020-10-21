@@ -2,7 +2,7 @@
 module.exports = function(app) {
   var bank = require('../controllers/bankController');
 
-  app.route('/saldo/:accountId')
+  app.route('/saldo/')
     .get(bank.saldo);
 
   app.route('/credito/:accountId/:value')
