@@ -6,8 +6,8 @@ const transferenciaCommand = require('../commands/transferenciaCommand.js');
 let accounts = require('../data/data.js');
 
 exports.saldo = function(req, res) {
-  const saldo = new saldoCommand(accounts, req.params.accountId).execute();
-  res.json(saldo);
+  const saldo = new saldoCommand(accounts, req.query.accountId).execute();
+  res.json(parseInt(saldo));
 };
 
 exports.credito = function(req, res) {
