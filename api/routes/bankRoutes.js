@@ -5,12 +5,12 @@ module.exports = function(app) {
   app.route('/saldo/')
     .get(bank.saldo);
 
-  app.route('/credito/:accountId/:value')
-    .put(bank.credito);
+  app.route('/credito/')
+    .get(bank.credito);
 
-  app.route('/debito/:accountId/:value')
+  app.route('/debito/')
     .get(bank.debito);
 
   app.route('/transferencia/:accountIdFrom/:accountIdTo/:value')
-    .put(bank.transferencia);
+    .get(bank.transferencia);
 };
