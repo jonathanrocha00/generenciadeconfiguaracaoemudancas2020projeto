@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var HttpClient = function() {
+                this.get = function(aUrl, aCallback) {
+                    var anHttpRequest = new XMLHttpRequest();
+                    anHttpRequest.onreadystatechange = function() { 
+                        if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                            aCallback(anHttpRequest.responseText);
+                    }
+
+                    anHttpRequest.open( "GET", aUrl, true );            
+                    anHttpRequest.send( null );
+                }
+            }
+
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            var client = new HttpClient();
+            client.get('http://localhost:3000/credito/?accountId=' + urlParams.get('accountId') + '&value=' + urlParams.get('value'), function(response) {
+                if (response == 'true') {
+                    document.getElementById("result").innerHTML = urlParams.get('value') + " reais creditados a conta " + urlParams.get('accountId');
+                } else {
+                    document.getElementById("result").innerHTML = "Operacao de credito falhou";
+                }
+            });
+            
+        </script>
+    </head>
+<body>
+    <p id="result"> Carregando... </p>
+
+    <form action="./index.html">
+        <button type="submit">Voltar</button>
+    </form>
+
+</body>
+</html>
