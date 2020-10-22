@@ -21,6 +21,6 @@ exports.debito = function(req, res) {
 };
 
 exports.transferencia = function(req, res) {
-  const result = new transferenciaCommand(accounts, req.params.accountIdFrom, req.params.accountIdTo, req.params.value).execute();
+  const result = new transferenciaCommand(accounts, req.query.accountIdFrom, req.query.accountIdTo, req.query.value).execute();
   res.json(result);
 };

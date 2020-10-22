@@ -11,6 +11,6 @@ module.exports = function(app) {
   app.route('/debito/')
     .get(bank.debito);
 
-  app.route('/transferencia/:accountIdFrom/:accountIdTo/:value')
+  app.route('/transferencia/')
     .get(bank.transferencia);
 };
