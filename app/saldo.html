@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var HttpClient = function() {
+                this.get = function(aUrl, aCallback) {
+                    var anHttpRequest = new XMLHttpRequest();
+                    anHttpRequest.onreadystatechange = function() { 
+                        if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                            aCallback(anHttpRequest.responseText);
+                    }
+
+                    anHttpRequest.open( "GET", aUrl, true );            
+                    anHttpRequest.send( null );
+                }
+            }
+
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            var client = new HttpClient();
+            client.get('http://localhost:3000/saldo/?accountId=' + urlParams.get('accountId'), function(response) {
+                document.getElementById("saldo").innerHTML = response + " reais";
+            });
+            
+        </script>
+    </head>
+<body>
+    <p id=''> Saldo </p>
+    <p id='saldo'> carregando... </p>
+
+    <form action="./index.html">
+        <button type="submit">Voltar</button>
+    </form>
+
+</body>
+</html>

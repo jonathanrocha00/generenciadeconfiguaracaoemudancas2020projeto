@@ -6,21 +6,21 @@ const transferenciaCommand = require('../commands/transferenciaCommand.js');
 let accounts = require('../data/data.js');
 
 exports.saldo = function(req, res) {
-  const saldo = new saldoCommand(accounts, req.params.accountId).execute();
-  res.json(saldo);
+  const saldo = new saldoCommand(accounts, req.query.accountId).execute();
+  res.json(parseInt(saldo));
 };
 
 exports.credito = function(req, res) {
-  const result = new creditoCommand(accounts, req.params.accountId, req.params.value).execute();
+  const result = new creditoCommand(accounts, req.query.accountId, req.query.value).execute();
   res.json(result);
 };
 
 exports.debito = function(req, res) {
-  const result = new debitoCommand(accounts, req.params.accountId, req.params.value).execute();
+  const result = new debitoCommand(accounts, req.query.accountId, req.query.value).execute();
   res.json(result);
 };
 
 exports.transferencia = function(req, res) {
-  const result = new transferenciaCommand(accounts, req.params.accountIdFrom, req.params.accountIdTo, req.params.value).execute();
+  const result = new transferenciaCommand(accounts, req.query.accountIdFrom, req.query.accountIdTo, req.query.value).execute();
   res.json(result);
 };
