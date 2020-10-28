@@ -13,8 +13,8 @@ class CreditoCommand {
         if (account) {
             if (parseInt(this.value) > 0) {
                 console.log("Creditando " + this.value + " na conta " + this.accountId + "...");
-                account.balance = parseInt(account.balance) + parseInt(this.value);
-                account.bonus = parseInt(account.bonus) + (parseInt(this.value) / 100);
+                account.balance = parseFloat(account.balance) + parseFloat(this.value);
+                account.bonus = parseFloat(account.bonus) + (parseFloat(this.value) / 100);
                 return true;
             } else {
                 console.log("Erro creditando na conta " + this.accountId + ". Valor não positivo");
