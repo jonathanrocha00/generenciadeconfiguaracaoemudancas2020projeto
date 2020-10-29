@@ -13,7 +13,7 @@ class DebitoCommand {
         if (account) {
             if (parseInt(this.value) > 0) {
                 console.log("Debitando " + this.value + " da conta " + this.accountId + "...");
-                account.balance = parseInt(account.balance) - parseInt(this.value);
+                account.balance = parseFloat(account.balance) - parseFloat(this.value);
                 return true;
             } else {
                 console.log("Erro debitando na conta " + this.accountId + ". Valor não positivo");

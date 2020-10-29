@@ -17,8 +17,8 @@ class TransferenciaCommand {
 
         if (accountFrom && accountTo) {
             console.log("Transferindo " + this.value + " da conta " + this.accountIdFrom + " para a conta " + this.accountIdTo + "...");
-            accountFrom.balance = parseInt(accountFrom.balance) - parseInt(this.value);
-            accountTo.balance = parseInt(accountTo.balance) + parseInt(this.value);
+            accountFrom.balance = parseFloat(accountFrom.balance) - parseFloat(this.value);
+            accountTo.balance = parseFloat(accountTo.balance) + parseFloat(this.value);
             return true;
         } else {
             console.log("Erro Transferindo " + this.value + " da conta " + this.accountIdFrom + " para a conta " + this.accountIdTo + ". Uma, ou ambas, contas são inexistentes");

@@ -13,7 +13,8 @@ class CreditoCommand {
         if (account) {
             if (parseInt(this.value) > 0) {
                 console.log("Depositando " + this.value + " na conta " + this.accountId + "...");
-                account.balance = parseInt(account.balance) + parseInt(this.value);
+                account.balance = parseFloat(account.balance) + parseFloat(this.value);
+                account.bonus = parseFloat(account.bonus) + (parseFloat(this.value) / 100);
                 return true;
             } else {
                 console.log("Erro depositando na conta " + this.accountId + ". Valor não positivo");

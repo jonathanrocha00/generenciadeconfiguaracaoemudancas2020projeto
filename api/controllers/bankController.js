@@ -24,3 +24,8 @@ exports.transferencia = function(req, res) {
   const result = new transferenciaCommand(accounts, req.query.accountIdFrom, req.query.accountIdTo, req.query.value).execute();
   res.json(result);
 };
+
+exports.dados = function(req, res) {
+  const result = accounts;
+  res.json(result);
+};
