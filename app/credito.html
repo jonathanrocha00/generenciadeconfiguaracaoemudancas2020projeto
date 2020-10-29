@@ -20,9 +20,9 @@
             var client = new HttpClient();
             client.get('http://localhost:3000/credito/?accountId=' + urlParams.get('accountId') + '&value=' + urlParams.get('value'), function(response) {
                 if (response == 'true') {
-                    document.getElementById("result").innerHTML = urlParams.get('value') + " reais creditados a conta " + urlParams.get('accountId');
+                    document.getElementById("result").innerHTML = urlParams.get('value') + " reais depositados a conta " + urlParams.get('accountId');
                 } else {
-                    document.getElementById("result").innerHTML = "Operacao de credito falhou";
+                    document.getElementById("result").innerHTML = "Operacao de deposito falhou";
                 }
             });
             
