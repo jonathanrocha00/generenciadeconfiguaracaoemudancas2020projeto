@@ -12,15 +12,15 @@ class CreditoCommand {
 
         if (account) {
             if (parseInt(this.value) > 0) {
-                console.log("Creditando " + this.value + " na conta " + this.accountId + "...");
+                console.log("Depositando " + this.value + " na conta " + this.accountId + "...");
                 account.balance = parseInt(account.balance) + parseInt(this.value);
                 return true;
             } else {
-                console.log("Erro creditando na conta " + this.accountId + ". Valor não positivo");
+                console.log("Erro depositando na conta " + this.accountId + ". Valor não positivo");
                 return false;
             }
         }  else {
-            console.log("Erro creditando na conta " + this.accountId + ". Conta inexistente");
+            console.log("Erro depositando na conta " + this.accountId + ". Conta inexistente");
             return false;
         }
         
