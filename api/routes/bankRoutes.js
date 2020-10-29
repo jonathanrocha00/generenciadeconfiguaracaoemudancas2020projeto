@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(app) {
+module.exports = function (app) {
   var bank = require('../controllers/bankController');
 
   app.route('/saldo/')
@@ -13,4 +13,7 @@ module.exports = function(app) {
 
   app.route('/transferencia/')
     .get(bank.transferencia);
+
+  app.route('/dados/')
+    .get(bank.dados);
 };
