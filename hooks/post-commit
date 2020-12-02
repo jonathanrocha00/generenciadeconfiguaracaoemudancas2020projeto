@@ -38,4 +38,4 @@ g = Github(token);
 repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
 issue = repo.get_issue(number=int(issueNumber))
 
-issue.create_comment('Comentario /n' + commitFiles + ' ' + author + ' ' + commitDate)
+issue.create_comment('Comentario /n  ' + commitFiles + ' ' + author + ' ' + commitDate)
