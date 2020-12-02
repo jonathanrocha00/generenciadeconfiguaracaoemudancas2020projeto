@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
+import os
 import sys, re
 import requests
 import json
 from collections import namedtuple
 from github import Github
-import os
+import personalGitToken
 
 
 #Get commit files
@@ -29,8 +30,7 @@ stream = os.popen('git log -1 --format=%cd')
 commitDate = stream.read()
 
 #Create comment on issue
-token = os.popen('git config user.email')
-g = Github(token.read());
+g = Github(personalGitToken.personalToken);
 repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
 issue = repo.get_issue(number=int(issueNumber))
 
