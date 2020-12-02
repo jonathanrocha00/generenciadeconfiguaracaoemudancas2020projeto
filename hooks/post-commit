@@ -29,9 +29,13 @@ author = stream.read()
 stream = os.popen('git log -1 --format=%cd')
 commitDate = stream.read()
 
+#Get Commit message
+stream = os.popen('git log -1 --pretty=%B')
+commitMessage = stream.read()
+
 #Create comment on issue
 g = Github(personalGitToken.personalToken);
 repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
 issue = repo.get_issue(number=int(issueNumber))
 
-issue.create_comment('<p>Autor: ' + author + '</p><p>Data do commit: ' + commitDate + '<p>Arquivos:</p>' + commitFiles)
+issue.create_comment('<p>Autor: ' + author + '</p><p>Data do commit: ' + commitDate + '<p>' + commitMessage + '</p>' + '<p>Arquivos:</p>'  + commitFiles)
