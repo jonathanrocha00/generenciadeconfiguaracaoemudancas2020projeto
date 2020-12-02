@@ -29,7 +29,8 @@ stream = os.popen('git log -1 --format=%cd')
 commitDate = stream.read()
 
 #Create comment on issue
-g = Github('projectbot42','projectbotpassword');
+token = '700c16ee8d9e12206fbbcf052c10d7dafff4b452'
+g = Github(token);
 repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
 issue = repo.get_issue(number=int(issueNumber))
 
