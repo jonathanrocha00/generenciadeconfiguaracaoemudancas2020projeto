@@ -34,5 +34,5 @@ for issue in filteredIssues:
 if commitMessageHasIssueNumber:
     sys.exit(0)
 else:
-    print 'ERROR: Commit message must include Issue number. E.g: Implement button #23'
+    print 'ERROR: Commit message must include valid Issue number. E.g: Implement button #23'
     sys.exit(1)
