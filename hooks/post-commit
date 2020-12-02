@@ -6,6 +6,7 @@ import json
 from collections import namedtuple
 from github import Github
 import os
+from token import token
 
 
 #Get commit files
@@ -29,12 +30,9 @@ stream = os.popen('git log -1 --format=%cd')
 commitDate = stream.read()
 
 #Create comment on issue
-# token = 
+token = os.popen('git config user.email')
+g = Github(token);
+repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
+issue = repo.get_issue(number=int(issueNumber))
 
-f = open("token.txt", "r")
-print(f.read())
-# g = Github(token);
-# repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
-# issue = repo.get_issue(number=int(issueNumber))
-
-# issue.create_comment('<p>Autor: ' + author + '</p><p>Data do commit: ' + commitDate + '<p>Arquivos:</p>' + commitFiles)
+issue.create_comment('<p>Autor: ' + author + '</p><p>Data do commit: ' + commitDate + '<p>Arquivos:</p>' + commitFiles)
