@@ -30,7 +30,7 @@ commitDate = stream.read()
 
 #Create comment on issue
 token = os.popen('git config user.email')
-g = Github(token);
+g = Github(token.read());
 repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
 issue = repo.get_issue(number=int(issueNumber))
 
