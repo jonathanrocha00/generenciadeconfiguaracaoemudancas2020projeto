@@ -6,7 +6,6 @@ import json
 from collections import namedtuple
 from github import Github
 import os
-from token import token
 
 
 #Get commit files
