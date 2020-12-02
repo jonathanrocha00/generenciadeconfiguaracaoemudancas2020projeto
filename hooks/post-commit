@@ -29,9 +29,12 @@ stream = os.popen('git log -1 --format=%cd')
 commitDate = stream.read()
 
 #Create comment on issue
-token = '700c16ee8d9e12206fbbcf052c10d7dafff4b452'
-g = Github(token);
-repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
-issue = repo.get_issue(number=int(issueNumber))
+# token = 
 
-issue.create_comment('<p>Autor: ' + author + '</p><p>Data do commit: ' + commitDate + '<p>Arquivos:</p>' + commitFiles)
+f = open("C:\Users\Jonathan\Desktop\Projeto 2020\generenciadeconfiguaracaoemudancas2020projeto\hooks\token", "r")
+print(f.read())
+# g = Github(token);
+# repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
+# issue = repo.get_issue(number=int(issueNumber))
+
+# issue.create_comment('<p>Autor: ' + author + '</p><p>Data do commit: ' + commitDate + '<p>Arquivos:</p>' + commitFiles)
