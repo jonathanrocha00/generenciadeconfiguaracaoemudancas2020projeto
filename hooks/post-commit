@@ -1,10 +1,7 @@
 #!/usr/bin/python
 
 import os
-import sys, re
-import requests
-import json
-from collections import namedtuple
+import re
 from github import Github
 import personalGitToken
 
