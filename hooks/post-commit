@@ -31,7 +31,7 @@ commitDate = stream.read()
 #Create comment on issue
 # token = 
 
-f = open("C:\Users\Jonathan\Desktop\Projeto 2020\generenciadeconfiguaracaoemudancas2020projeto\hooks\token", "r")
+f = open("C:\\Users\Jonathan\Desktop\Projeto 2020\generenciadeconfiguaracaoemudancas2020projeto\hooks\token", "r")
 print(f.read())
 # g = Github(token);
 # repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
