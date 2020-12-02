@@ -1,0 +1,41 @@
+#!/usr/bin/python
+
+import sys, re
+import requests
+import json
+from collections import namedtuple
+from github import Github
+import os
+
+
+#Get commit files
+stream = os.popen('git rev-parse HEAD')
+commitHash = stream.read()
+stream = os.popen('git diff-tree --no-commit-id --name-only -r ' + commitHash)
+commitFiles = stream.read()
+
+#Extract Issue number from Git Log
+stream = os.popen('git log -1 HEAD')
+gitLog = stream.read()
+matchIssueNumber = re.search("(?<=\#)\d+", gitLog)
+issueNumber = matchIssueNumber.group(0)
+
+#Get Author name
+stream = os.popen('git log -1 --pretty=format:%an')
+author = stream.read()
+
+#Get Commit date
+stream = os.popen('git log -1 --format=%cd')
+commitDate = stream.read()
+
+
+
+
+
+#Create comment on issue
+token = '4ea5e08bd7ccfe292ed13e0454397f532e3d151b'
+g = Github(token);
+repo = g.get_repo("jonathanrocha00/generenciadeconfiguaracaoemudancas2020projeto")
+issue = repo.get_issue(number=int(issueNumber))
+
+issue.create_comment('Comentario ' + commitFiles + ' ' + author + ' ' + commitDate)
