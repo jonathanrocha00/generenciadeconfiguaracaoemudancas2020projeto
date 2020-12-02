@@ -28,23 +28,6 @@ author = stream.read()
 stream = os.popen('git log -1 --format=%cd')
 commitDate = stream.read()
 
-
-#Get the commit file
-test = open(sys.argv[0])
-commitMessage = test.read().strip()
-print commitMessage
-
-test2 = open(sys.argv[1])
-commitMessage2 = test2.read().strip()
-print commitMessage2
-
-test3 = open(sys.argv[2])
-commitMessage3 = test3.read().strip()
-print commitMessage3
-
-
-
-
 #Create comment on issue
 token = '6bf0c4fdc040fa7e2f0833cc18041e652e141981'
 g = Github(token);
